@@ -22,49 +22,38 @@ g3_adj = [[0,1,1,1,1],
           [1,1,0,1,1],
           [1,1,1,0,1],
           [1,1,1,1,0]]
-adjacency_matrix = np.array(g3_adj)
+adjacency_matrix = np.array(g1_adj)
 #or also:
 #adjacency_matrix = np.array(input(" Please enter the adjacency matrix as a 2-D array: "))
 
 G = nx.from_numpy_array(adjacency_matrix) # Creating the graph given the adjacency matrix
-
-# Displaying the graph
-# pos = nx.circular_layout(G) # Set position layout
-# nx.draw(G, pos, edge_color = 'red')
-
-G.add_nodes_from(G.nodes(), color='red')
-# print(G.node[2]['color'])
-#print([n for n in G[0]]) #adjacency list
-# nx.draw_networkx_nodes(G, pos, nodelist=G.nodes(), node_color='b')
-# nx.draw_networkx_edges(G, pos, edgelist = G.edges(), edge_color = 'r')
-# plt.axis('off') # To prevent showing X-Y axes
-# plt.show()
+G.add_nodes_from(G.nodes(), color='red') # Initializing graph with red-colored nodes
 
 # BackTracking Graph Coloring algorithm
 # The default color is red
 color_list = ['blue', 'pink', 'green', 'purple', 'khaki', 'orange', 'yellow']
 
+# Coloring Function
 def assignColor(node_):
 
     safe_color_list = color_list.copy()
-    # print(list(G.adj[node_].keys()))
-    for nd in G.adj[node_].keys():# for nd in G.neighbors(node_):
+
+    for nd in G.adj[node_].keys():
        if G.node[nd]['color'] != 'red':
             safe_color_list.remove(G.node[nd]['color'])
     G.node[node_]['color'] = safe_color_list[0]
-    for nd_ in G.adj[node_].keys():#for nd_ in G.neighbors(node_):
+    for nd_ in G.adj[node_].keys():
         if G.node[nd_]['color'] == 'red':
             assignColor(nd_)
 
 # main call
-# G.node[0]['color'] = 'blue'
 node_colors = []
 for nd in G.nodes():
     if G.node[nd]['color'] == 'red':
         assignColor(nd)
-    node_colors.append(G.node[nd]['color'])# G.add_node(nd, color=G.node[nd]['color'])
+    node_colors.append(G.node[nd]['color'])
 
 pos = nx.circular_layout(G) # Set position layout
 nx.draw(G, pos, node_color=node_colors)
 plt.axis('off') # To prevent showing X-Y axes
-plt.show()
+plt.show() # Displays the graph
