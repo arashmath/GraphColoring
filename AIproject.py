@@ -3,7 +3,7 @@ import numpy as np # To input the adjacency matrix as a 2-D array
 import matplotlib.pyplot as plt # To display a graphical view of the graph
 import datetime as dt # To keep the run-time of each algorithm
 
-G = nx.Graph() # Create graph G
+G = nx.Graph() # Create graph G ------------------------ Do we need this line?
 # Inputting the adjacency matrix
 #----------------------control input: nXn & symmetric & connected/ make animation of coloring/ keep time/ change colors
 g1_adj = [[0,1,1,1,0],
@@ -22,7 +22,7 @@ g3_adj = [[0,1,1,1,1],
           [1,1,0,1,1],
           [1,1,1,0,1],
           [1,1,1,1,0]]
-adjacency_matrix = np.array(g1_adj)
+adjacency_matrix = np.array(g3_adj)
 #or also:
 #adjacency_matrix = np.array(input(" Please enter the adjacency matrix as a 2-D array: "))
 
