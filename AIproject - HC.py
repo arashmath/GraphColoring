@@ -104,12 +104,9 @@ def choose_next_state(graph_, nodes_dict):
 
     (node, color) = random.choice(list(nodes_dict.keys()))
 
-    if (nodes_dict[(node, color)] <= loss_function(graph_)):
-        graph_.nodes[node]['color'] = color
-        graph_ = hill_climbing(graph_, color_list)
-        return graph_
-    else:
-        return graph_
+    graph_.nodes[node]['color'] = color
+    graph_ = hill_climbing(graph_, color_list)
+    return graph_
 
 #---------------- function hill_climbing ----------------
 # This function receives a graph and a list of colors as input and performs the Hill Climbing
@@ -117,6 +114,7 @@ def choose_next_state(graph_, nodes_dict):
 def hill_climbing(graph, colors):
 
     candidate_colored_nodes = {}
+    current_loss = copy.deepcopy(loss_function(graph))
 
     for node in graph.nodes():
         node_initial_color = copy.deepcopy(graph.nodes[node]['color'])
@@ -127,11 +125,15 @@ def hill_climbing(graph, colors):
         for color in colors: # check all the colors and compare with each other
             if color not in set(adjacent_colors):
                 graph.nodes[node]['color'] = color
-                candidate_colored_nodes[(node, color)] = loss_function(graph)
+                if (loss_function(graph) <= current_loss):
+                    candidate_colored_nodes[(node, color)] = loss_function(graph)
         graph.nodes[node]['color'] = node_initial_color
 
-    graph = choose_next_state(graph, candidate_colored_nodes)
-    return graph
+    if bool(candidate_colored_nodes):
+        return graph
+    else:
+        graph = choose_next_state(graph, candidate_colored_nodes)
+        return graph
 
 #================ main call ================
 G, color_list = initial_state_generator(G)
