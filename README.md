@@ -22,4 +22,5 @@ And I would like to tell that story, as it might be helpful for some people.
 
 ### TO ADD
 * More graphs
-* affiliation of each graph and source
+* Affiliation of each graph and source
+* Remove myciel2 for its problem
