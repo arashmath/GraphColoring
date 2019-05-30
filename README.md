@@ -5,6 +5,7 @@ After a while, I modified it so it becomes a comprehensive, juicy project!
 The goal of this project is to implement and compare some of the famous Heuristic algorithms and AI approaches to Graph Coloring problem.
 ### [NEW!]
 I wrote a Python script to extract the adjacency matrix of graphs in .col format from [here](https://mat.tepper.cmu.edu/COLOR/instances/instances.tar).
+Handled .col.b files as well by chance! (drag and drop in the compiled C code)
 
 ### Story of Implementation
 Just like almost any other code I try to write, I faced many problems to prepare the contents of this repository.
