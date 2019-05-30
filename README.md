@@ -11,12 +11,12 @@ Just like almost any other code I try to write, I faced many problems to prepare
 And I would like to tell that story, as it might be helpful for some people.
 
 * **Code**
-To be written later!
+- More on the way later!
 
 * **Data Collection**
 - drag and drop into a.exe
 - get code out of shar file on site
-- concatenation of datasets
+- concatenation of datasets, and correction with "index=True" in to_csv
 - 
 
 ### TO ADD
