@@ -1,26 +1,15 @@
-# Graph Coloring
-This is the code for my **Graph Coloring Exploration Project**, which at first was my Artificial Intelligence course project at *Amirkabir University of Technology* (aka *AUT* or *Tehran Polytechnic*).
-After a while, I modified it so it becomes a comprehensive, juicy project!
+### [To be updated]
+This is the code for my **Graph Coloring Exploration Project**, which was my Artificial Intelligence course project at *Amirkabir University of Technology* (aka *AUT* or *Tehran Polytechnic*). My implementations not only return the adjacancy matrix of the graph, but also visualize the colored result graph.
 ### Goal
-The goal of this project is to implement and compare some of the famous Heuristic algorithms and AI approaches to Graph Coloring problem.
+The goal of this project was to implement and compare some of the famous Heuristic algorithms and AI approaches to the Graph Coloring problem. 
 ### [NEW!]
-I wrote a Python script to extract the adjacency matrix of graphs in .col format from [here](https://mat.tepper.cmu.edu/COLOR/instances/instances.tar).
-Handled .col.b files as well by chance! (drag and drop in the compiled C code)
+I wrote a Python script to extract the adjacency matrix of graphs in _.col_ and _.col.b_ format from [here](https://mat.tepper.cmu.edu/COLOR/instances/instances.tar).
 
-### Story of Implementation
-Just like almost any other code I try to write, I faced many problems to prepare the contents of this repository.
-And I would like to tell that story, as it might be helpful for some people.
-
-* **Code**
-- More on the way later!
-
-* **Data Collection**
-- drag and drop into a.exe
-- get code out of shar file on site
-- concatenation of datasets, and correction with "index=True" in to_csv
-- 
-
-### TO ADD
-* More graphs
-* Affiliation of each graph and source
-* Remove myciel2 for its problem
+### A brief description of the files:
+* AIproject - Back Tracking-DFS.py: An exact approach to solve the graph coloring problem using a back tracking algorithm
+* AIproject - HC.py: An approximation of the coloring using Hill Climbing algorithm
+* AIproject - IDS.py: An implementation using the Iterative-deepening search algorithm
+* AIproject - Learning Model (2).ipynb: A naive approach to predict the chromatic number using linear regression
+* AIproject - SA.py: An approximation of the coloring using Simulated Annealing algorithm
+* data.csv: Contains the adjacancy matrix of some famous graphs from [here](https://mat.tepper.cmu.edu/COLOR/instances/instances.tar)
+* extract_adj_matrix.py: The code that extracted the adjacancy matrix of graphs from _.col_ and _.col.b_ format into a _.csv_ file
